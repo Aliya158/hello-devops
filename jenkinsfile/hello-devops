@@ -17,7 +17,7 @@ pipeline {
 
         stage('Unit Test') {
             steps {
-                sh 'echo "No tests yet"'
+                sh 'echo "No testjus yet"'
             }
         }
 
