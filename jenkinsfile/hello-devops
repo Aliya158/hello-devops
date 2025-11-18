@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/<Aliya158>/hello-devops.git'
+                    url: 'https://github.com/Aliya158/hello-devops.git'
             }
         }
 
