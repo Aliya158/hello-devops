@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Aliya158/hello-devops.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip3 install flask'
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                sh 'echo "No tests yet"'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'tar -czvf app.tar.gz *'
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'app.tar.gz', onlyIfSuccessful: true
+            }
+        }
+    }
+}
